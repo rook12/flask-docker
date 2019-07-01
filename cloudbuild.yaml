@@ -1,15 +1,15 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: ["build", "-t", "gcr.io/k8s-experiment-245209/flask-docker", "."]
+  args: ["build", "-t", "gcr.io/k8s-experiment-245209/flask-web-server", "."]
 - name: 'gcr.io/cloud-builders/docker'
-  args: ["push", "gcr.io/k8s-experiment-245209/flask-docker"]
+  args: ["push", "gcr.io/k8s-experiment-245209/flask-web-server"]
 - name: 'gcr.io/cloud-builders/kubectl'
   args:
   - set
   - image
   - deployment
   - flask-web-server
-  - flask=gcr.io/k8s-experiment-245209/flask-docker:latest
+  - flask=gcr.io/k8s-experiment-245209/flask-web-server:latest
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
   - 'CLOUDSDK_CONTAINER_CLUSTER=terraform-cluster-2'
