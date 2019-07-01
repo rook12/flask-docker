@@ -5,15 +5,6 @@ steps:
   args: ["push", "gcr.io/k8s-experiment-245209/flask-docker"]
 - name: 'gcr.io/cloud-builders/kubectl'
   args:
-    - config
-    - list
-    - account
-    - --format "value(core.account)"
-  env:
-  - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
-  - 'CLOUDSDK_CONTAINER_CLUSTER=terraform-cluster-2'
-- name: 'gcr.io/cloud-builders/kubectl'
-  args:
   - set
   - image
   - deployment
