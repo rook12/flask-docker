@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    message = "Hello to you 6"
+    message = "Hello to you 7"
     app.logger.info(message)
     return message
 
