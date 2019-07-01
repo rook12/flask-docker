@@ -12,4 +12,4 @@ steps:
   - flask=gcr.io/k8s-experiment-245209/flask-docker:latest
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
-  - 'CLOUDSDK_CONTAINER_CLUSTER=terraform-cluster'
+  - 'CLOUDSDK_CONTAINER_CLUSTER=terraform-cluster-2'
